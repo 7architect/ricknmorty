@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { OmniChanelSearchUI } from '@/features/omniChanelSearch'
+import * as OmniChanelSearchUI from '@/features/omniChanelSearch/ui'
 import * as UI from '@/shared/ui'
 
-const props = defineProps<{
+defineProps<{
   id: string
 }>()
 </script>

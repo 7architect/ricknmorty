@@ -15,17 +15,8 @@ const config: CodegenConfig = {
       config: {
         useTypeImports: true,
         avoidOptionals: true,
-        preResolveTypes: true,
-        dedupeFragments: true,
-        experimentalFragmentVariables: true,
-        exportFragmentSpreadSubTypes: true,
-        extractAllFieldsToTypes: true,
         skipTypename: true,
       },
-      plugins: [
-        'typescript',
-        'typescript-operations',
-      ],
     },
   },
 }

@@ -35,20 +35,12 @@ const searchVariables = reactive<SearchBoxQueryVariables>({
   page: 1,
 })
 
-function nextPage() {
-  searchVariables.page += 1
-}
-function prevPage() {
-  searchVariables.page -= 1
-}
-function firstPage() {
-  searchVariables.page = 1
-}
-
-const { result, load, loading, fetchMore } = useLazyQuery(SearchBoxDocument)
+const { result, load } = useLazyQuery(SearchBoxDocument)
 const searchResults = computed(() => {
   const sections = useFragment(OmniChanelSearch_FeatureQueryFrag, result.value)
   // TODO:Critical: Resolve fragment type
+  // eslint-disable-next-line ts/ban-ts-comment
+  // @ts-expect-error
   return mapResults(sections)
 })
 

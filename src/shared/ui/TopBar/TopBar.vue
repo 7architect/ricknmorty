@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { TopBarProps, TopBarSlots } from './TopBar'
 
-const props = defineProps<TopBarProps>()
-const slots = defineSlots<TopBarSlots>()
+defineProps<TopBarProps>()
+defineSlots<TopBarSlots>()
 </script>
 
 <template>

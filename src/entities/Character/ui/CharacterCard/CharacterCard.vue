@@ -6,13 +6,13 @@ import { CharacterCardPreviewFragment, type CharacterCardProps } from './Charact
 
 const props = defineProps<CharacterCardProps>()
 
-const character = computed(() => useFragment(CharacterCardPreviewFragment, props.character) || [])
+const character = computed(() => useFragment(CharacterCardPreviewFragment, props.character))
 </script>
 
 <template>
   <UI.Card
-    :title="character.name"
-    :image="character.image"
+    :title="character?.name"
+    :image="character?.image"
   />
 </template>
 
