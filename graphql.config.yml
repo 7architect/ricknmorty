@@ -1,0 +1,10 @@
+schema: ./src/shared/generated/gql-generated/schema.graphql
+extensions:
+  languageService:
+    useLegacyIntrospection: true  # Использовать старую версию introspection
+  endpoints:
+    Default GraphQL Endpoint:
+      url: https://rickandmortyapi.com/graphql
+      headers:
+        user-agent: JS GraphQL
+      introspect: true
