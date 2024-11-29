@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import type { FoundItemProps } from './FoundItem.ts'
+import type { FoundItemEmits, FoundItemProps } from './FoundItem.ts'
 import { toRefs } from 'vue'
 
 const props = defineProps<FoundItemProps>()
+const emit = defineEmits<FoundItemEmits>()
 const { image, title, subtitle, uptitle } = toRefs(props)
 </script>
 
@@ -12,8 +13,12 @@ const { image, title, subtitle, uptitle } = toRefs(props)
     :class="{
       'item--with-uptitle': uptitle,
     }"
+    @click="emit('click')"
   >
-    <h4 class="item__uptitle">
+    <h4
+      class="item__uptitle"
+      @click.self="emit('clickUptitle', uptitle || '')"
+    >
       {{ uptitle }}
     </h4>
 
