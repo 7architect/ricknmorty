@@ -108,7 +108,9 @@ onMounted(async () => {
       :class="{
         'search-box__inner--active-state': focused,
       }"
-      :style="{ width: `${width}px` }"
+      :style="{
+        width: `${width}px`,
+      }"
     >
       <button
         class="search-box__back-button"
@@ -183,9 +185,9 @@ onMounted(async () => {
     display: flex;
     align-items: center;
     position: absolute;
-    top: 0p;
+    top: 0;
     left: 0;
-    //width: 100%;
+    height: 100%;
     max-width: 100%;
     transition: all .3s ease-in-out;
     &--active-state {
@@ -208,7 +210,7 @@ onMounted(async () => {
 
   &__results-container {
     position: absolute;
-    top: -1rem;
+    top: -2rem;
     left: -0.5rem;
     width: calc(100% + 1rem);
     padding: 5rem 3rem 3rem 3rem;
